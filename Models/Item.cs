@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace MyCupcakeFactory.Models
 {
-    public class Confeiteiro
+    public class Item
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "* Preenchimento obrigatório.")]
-        public string Nome { get; set; }
+        public int IdCategoria { get; set; }
+        public virtual Categoria Categoria { get; set; }
         [Required(ErrorMessage = "* Preenchimento obrigatório.")]
+        public int IdConfeiteiro { get; set; }
+        public virtual Confeiteiro Confeiteiro { get; set; }
+        [Required(ErrorMessage = "* Preenchimento obrigatório.")]
+        public float Valor { get; set; }
+
         public virtual List<Pedido> Pedidos { get; set; }
-        public virtual List<Item> Items { get; set; }
     }
 }

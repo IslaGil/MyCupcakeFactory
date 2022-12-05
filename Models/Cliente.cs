@@ -13,6 +13,7 @@ namespace MyCupcakeFactory.Models
         public string Nome { get; set; }
         [Required(ErrorMessage = "* Preenchimento obrigatório.")]
         public string Telefone { get; set; }
+        [Required(ErrorMessage = "* Preenchimento obrigatório.")]
         public string Email { get; set; }
         public int IdEndereço { get; set; }
         public virtual Endereço Endereço { get; set; }
